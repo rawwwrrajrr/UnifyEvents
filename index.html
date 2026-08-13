@@ -1,0 +1,933 @@
+Exit code: 0
+Wall time: 0.3 seconds
+Total output lines: 999
+Output:
+<title>for nikki</title>
+
+<script>
+/* Runs before the page lays out. The <head> isn't ours to author when this is
+   published, so make sure the phone gets a device-width viewport either way,
+   and that viewport-fit=cover is set so env(safe-area-inset-*) actually applies
+   around the notch and home bar. */
+(function(){
+  var m=document.querySelector('meta[name="viewport"]');
+  if(!m){
+    m=document.createElement("meta");
+    m.setAttribute("name","viewport");
+    m.setAttribute("content","width=device-width, initial-scale=1, viewport-fit=cover");
+    document.head.appendChild(m);
+  }else if(!/viewport-fit/.test(m.getAttribute("content")||"")){
+    m.setAttribute("content",(m.getAttribute("content")||"width=device-width, initial-scale=1")+", viewport-fit=cover");
+  }
+})();
+</script>
+
+<!-- -- preloader ------------------------------------------- -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-in">
+    <span class="mono boot-label">assembling something for you</span>
+    <div class="boot-bar"><i></i></div>
+    <span class="mono boot-num">000</span>
+  </div>
+</div>
+
+<!-- -- fixed atmosphere ------------------------------------ -->
+<canvas id="aurora" aria-hidden="true"></canvas>
+<div id="grain" aria-hidden="true"></div>
+<div id="vignette" aria-hidden="true"></div>
+
+<button id="sound" type="button" aria-pressed="false" aria-label="Turn on ambient sound">
+  <span class="sw" aria-hidden="true"></span><span class="mono">sound</span>
+</button>
+
+<div id="rail" aria-hidden="true"><span class="rail-line"><i id="railfill"></i></span></div>
+
+<main id="doc">
+
+  <!-- 00 - hero -->
+  <section class="sec hero" data-idx="00" data-name="open">
+    <div class="hero-photo" aria-hidden="true"><div id="heroImg"></div></div>
+    <div class="inner">
+      <p class="mono tag" data-scramble>for nikki &middot; a place that stays open</p>
+      <h1 class="title" id="title"><span>n</span><span>i</span><span>k</span><span>k</span><span>i</span></h1>
+      <p class="lede reveal">i couldn't fix any of it, so i built you somewhere to put it down for a while.</p>
+      <div class="cue reveal" aria-hidden="true"><span class="mono">scroll</span><i></i></div>
+    </div>
+  </section>
+
+  <!-- 01 - open -->
+  <section class="sec" data-idx="01" data-name="honest">
+    <div class="inner narrow">
+      <p class="mono tag">01 &mdash; the honest part</p>
+      <h2 class="h-lg"><span class="ln">i know it's a lot</span><span class="ln">right now.</span></h2>
+      <p class="body reveal">i'm not going to tell you it's fine, or that it'll all make sense soon. i don't know that.</p>
+      <p class="body reveal">i just didn't want you sitting in it alone.</p>
+    </div>
+  </section>
+
+  <!-- 02 - letter -->
+  <section class="sec" data-idx="02" data-name="letter">
+    <div class="inner narrow">
+      <p class="mono tag">02 &mdash; what i needed to say</p>
+      <div class="letter">
+        <p class="ln-wrap reveal"><span class="ln">there's a version of you</span></p>
+        <p class="ln-wrap reveal"><span class="ln">you think i signed up for &mdash;</span></p>
+        <p class="ln-wrap reveal dim"><span class="ln">the easy one. the funny one.</span></p>
+        <p class="ln-wrap reveal dim"><span class="ln">the one who's fine.</span></p>
+        <p class="ln-wrap reveal"><span class="ln">i didn't.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 - thesis -->
+  <section class="sec thesis" data-idx="03" data-name="all of you">
+    <div class="thesis-photo" aria-hidden="true"><div id="thesisImg"></div></div>
+    <div class="inner">
+      <p class="h-md reveal">i don't just want the good parts of you.</p>
+      <h2 class="h-xl thesis-line">
+        <span class="ln-wrap"><span class="ln">i want</span></span>
+        <span class="ln-wrap"><span class="ln accent">all of you.</span></span>
+      </h2>
+      <p class="body reveal">the tired parts. the quiet parts. the ones you think are too much, and the ones you'd hide from anyone else. those are you too, and i'm not scared of them.</p>
+    </div>
+  </section>
+
+  <!-- 04 - gallery -->
+  <section class="sec gallery" data-idx="04" data-name="every version">
+    <div class="inner wide">
+      <p class="mono tag">04 &mdash; the archive</p>
+      <h2 class="h-lg"><span class="ln">every version of you.</span></h2>
+      <p class="hint reveal">swipe &rarr;</p>
+    </div>
+    <div class="deck" id="deck">
+      <div class="deck-pad" aria-hidden="true"></div>
+
+      <article class="card" data-fig="roses">
+        <div class="shot"><img id="g0" alt="Nikki holding pink roses and baby's breath against her cheek" loading="eager" fetchpriority="high" /><span class="sheen" aria-hidden="true"></span></div>
+        <div class="meta"><span class="mono">01</span><h3>the one with the flowers</h3><p>soft, and a little embarrassed about being soft. you don't have to be.</p></div>
+      </article>
+
+      <article class="card" data-fig="night">
+        <div class="shot"><img id="g1" alt="Nikki close up at night, pulling a playful face" loading="eager" fetchpriority="high" /><span class="sheen" aria-hidden="true"></span></div>
+        <div class="meta"><span class="mono">02</span><h3>the one pulling a face at me</h3><p>nobody else gets this one. it's my favourite thing i own.</p></div>
+      </article>
+
+      <article class="card" data-fig="laugh">
+        <div class="shot"><img id="g2" alt="Nikki laughing, dressed up, wearing gold jewellery" loading="eager" fetchpriority="high" /><span class="sheen" aria-hidden="true"></span></div>
+        <div class="meta"><span class="mono">03</span><h3>the one mid-laugh</h3><p>if i could keep one sound forever, it'd be this one. easy choice.</p></div>
+      </article>
+
+      <article class="card" data-fig="home">
+        <div class="shot"><img id="g3" alt="Nikki standing at home, smiling over her shoulder" loading="eager" fetchpriority="high" /><span class="sheen" aria-hidden="true"></span></div>
+        <div class="meta"><span class="mono">04</span><h3>the one on an ordinary day</h3><p>no occasion. nothing special happening. still the best part of it.</p></div>
+      </article>
+
+      <article class="card card-key" data-fig="unguarded">
+        <div class="shot"><img id="g4" alt="Nikki with wet hair, no makeup, looking straight at the camera" loading="eager" fetchpriority="high" /><span class="sheen" aria-hidden="true"></span></div>
+        <div class="meta"><span class="mono">05</span><h3>the one that's just you</h3><p>wet hair, no makeup, nothing to prove. you're beautiful like this without even trying, and i'm the lucky one who gets to see it. this is the one i want most.</p></div>
+      </article>
+
+      <div class="deck-pad" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- 05 - hold -->
+  <section class="sec" data-idx="05" data-name="hold">
+    <div class="inner narrow">
+      <p class="mono tag">05 &mdash; when it gets heavy</p>
+      <h2 class="h-lg"><span class="ln">press and hold.</span></h2>
+      <p class="hint reveal">closest thing i've got to my arms around you from here.</p>
+      <div class="hold-stage reveal">
+        <button id="holdbtn" type="button" aria-label="Press and hold">
+          <span class="halo" aria-hidden="true"></span>
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="track" cx="60" cy="60" r="54"></circle>
+            <circle class="fill" cx="60" cy="60" r="54"></circle>
+          </svg>
+          <span id="holdword">hold</span>
+        </button>
+      </div>
+      <p class="hold-msg" id="holdmsg" aria-live="polite">&nbsp;</p>
+    </div>
+  </section>
+
+  <!-- 06 - roses -->
+  <section class="sec" data-idx="06" data-name="roses">
+    <div class="inner narrow">
+      <p class="mono tag">06 &mdash; refill</p>
+      <h2 class="h-lg"><span class="ln">take a tulip.</span></h2>
+      <div class="rose-stage reveal">
+        <button id="rose" type="button" aria-label="Take a tulip">
+          <svg viewBox="0 0 100 116" aria-hidden="true">
+            <g class="stem">
+              <path class="stalk" d="M50 68 V112" />
+              <path d="M50 96 C38 96 29 87 26 77 C39 76 48 84 50 96 Z" />
+              <path d="M50 88 C62 88 71 79 74 69 C61 68 52 76 50 88 Z" />
+            </g>
+            <g class="bud">
+              <path class="p p1" d="M50 70 C40 66 30 54 30 38 C30 26 36 16 43 11 C46 22 48 32 49 44 C49 54 50 62 50 70 Z" />
+              <path class="p p2" d="M50 70 C60 66 70 54 70 38 C70 26 64 16 57 11 C54 22 52 32 51 44 C51 54 50 62 50 70 Z" />
+              <path class="p p3" d="M50 12 C57 20 62 32 62 45 C62 58 57 67 50 72 C43 67 38 58 38 45 C38 32 43 20 50 12 Z" />
+            </g>
+          </svg>
+        </button>
+        <div class="glass rose-panel">
+          <p class="mono" id="rosecount">00 / 26</p>
+          <!-- inner span so the word spans sit in a normal inline context:
+               a flex container drops whitespace-only text nodes between items -->
+          <p class="rose-msg" aria-live="polite"><span class="rose-msg-in" id="rosemsg">tap it.</span></p>
+        </div>
+      </div>
+      <p class="hint reveal">there are plenty. come back for more whenever.</p>
+    </div>
+  </section>
+
+  <!-- 07 - close -->
+  <section class="sec" data-idx="07" data-name="stay">
+    <div class="inner narrow">
+      <p class="mono tag">07 &mdash; end of page, not end of me</p>
+      <h2 class="h-lg"><span class="ln">this stays here.</span></h2>
+      <p class="body reveal">3am, a bad tuesday, the middle of something &mdash; open it again. it doesn't expire and neither do i.</p>
+      <p class="sig reveal">&mdash; yours, all of it</p>
+      <button class="btn reveal" type="button" id="totop">back to the top</button>
+    </div>
+  </section>
+
+</main>
+
+<style>
+/* === tokens ===============================================
+   One committed world: night, aurora, glass, roses.
+   Every colour painted explicitly so it holds on any host ground. */
+:root{
+  --void:#07050A;
+  --void-2:#0E0912;
+  --rose:#FF3D80;
+  --rose-dim:#B32A5B;
+  --violet:#7B5CFF;
+  --cyan:#4FE0DC;
+  --petal:#FFC9DC;
+  --cream:#FFF3F6;
+  /* lifted well clear of the aurora: the old #9C8A9E sat at ~2:1 against the
+     bright patches and was effectively unreadable there */
+  --grey:#CDBBCE;
+  --hair:rgba(255,201,220,.16);
+  --glass:rgba(16,10,20,.66);
+
+  --serif:ui-serif,"New York","Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:ui-rounded,"SF Pro Rounded","Segoe UI Variable Display","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+
+  --out:cubic-bezier(.16,1,.3,1);
+  --io:cubic-bezier(.65,0,.35,1);
+  --gut:max(22px,env(safe-area-inset-left));
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--void);
+  color:var(--cream);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+body.locked{overflow:hidden}
+
+/* === atmosphere ========================================== */
+#aurora{
+  position:fixed;inset:-14%;width:128%;height:128%;
+  z-index:-3;pointer-events:none;
+  filter:blur(58px) saturate(1.2);
+  opacity:.85;
+}
+/* Scrim, not just a vignette. The flat layer is what makes body copy legible
+   over the bright middle of the aurora; the radials only shape the edges. */
+#vignette{
+  position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(120% 78% at 50% 100%,rgba(7,5,10,.80),transparent 62%),
+    radial-gradient(120% 78% at 50% 0%,rgba(7,5,10,.62),transparent 60%),
+    linear-gradient(180deg,rgba(7,5,10,.60),rgba(7,5,10,.54) 46%,rgba(7,5,10,.66));
+}
+#grain{
+  position:fixed;inset:0;z-index:9;pointer-events:none;
+  opacity:.055;mix-blend-mode:overlay;
+  background-image:var(--grain-src);
+  background-size:180px 180px;
+}
+
+/* === preloader =========================================== */
+#boot{
+  position:fixed;inset:0;z-index:60;
+  background:var(--void);
+  display:grid;place-items:center;
+  clip-path:inset(0 0 0 0);
+  transition:clip-path 1.05s var(--out);
+}
+#boot.done{clip-path:inset(0 0 100% 0)}
+#boot.gone{display:none}
+.boot-in{display:flex;flex-direction:column;align-items:center;gap:16px;padding:0 var(--gut)}
+.boot-label{color:var(--grey);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase}
+.boot-bar{width:min(210px,54vw);height:1px;background:var(--hair);overflow:hidden}
+.boot-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--violet),var(--rose));transition:width .12s linear}
+.boot-num{color:var(--petal);font-size:.7rem;letter-spacing:.2em;font-variant-numeric:tabular-nums}
+
+/* === chrome ============================================== */
+.mono{font-family:var(--mono);font-size:.63rem;letter-spacing:.2em;text-transform:uppercase}
+
+#sound{
+  position:fixed;z-index:20;
+  top:calc(14px + env(safe-area-inset-top));right:calc(14px + env(safe-area-inset-right));
+  display:flex;align-items:center;gap:9px;
+  padding:9px 15px 9px 12px;border-radius:999px;
+  border:1px solid var(--hair);background:var(--glass);color:var(--grey);
+  backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
+  cursor:pointer;
+  transition:border-color .4s var(--out),color .4s var(--out);
+}
+#sound .sw{width:8px;height:8px;border-radius:50%;background:var(--grey);transition:background .4s var(--out),box-shadow .4s var(--out)}
+#sound[aria-pressed="true"]{color:var(--petal);border-color:rgba(255,61,128,.34)}
+#sound[aria-pressed="true"] .sw{background:var(--rose);box-shadow:0 0 0 4px rgba(255,61,128,.18)}
+
+#rail{
+  position:fixed;z-index:20;right:max(15px,env(safe-area-inset-right));top:50%;
+  transform:translateY(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  pointer-events:none;
+}
+.rail-line{display:block;width:1px;height:96px;background:var(--hair);position:relative;overflow:hidden}
+.rail-line i{
+  position:absolute;inset:0 0 auto 0;height:100%;
+  background:linear-gradient(180deg,var(--rose),var(--violet));
+  transform:scaleY(0);transform-origin:top;
+}
+#rail .tick{
+  width:5px;height:5px;border-radius:50%;background:rgba(255,201,220,.2);
+  transition:background .45s var(--out),transform .45s var(--out);
+}
+#rail .tick.on{background:var(--rose);transform:scale(1.6)}
+@media (max-width:520px){#rail{display:none}}
+
+/* === layout ============================================== */
+.sec{
+  position:relative;
+  min-height:100vh;min-height:100dvh;
+  display:grid;align-items:center;
+  padding:clamp(88px,14vh,140px) var(--gut);
+  /* clip sideways only. overflow:hidden here also clipped VERTICALLY, so on a
+     short window any section taller than the viewport had its overflow cut off
+     and unreachable -- the section grows and the page scrolls instead now. */
+  overflow-x:clip;
+}
+.inner{width:100%;max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(18px,3.4vw,26px)}
+.inner.narrow{max-width:640px}
+.inner.wide{max-width:1180px}
+.gallery{padding-left:0;padding-right:0}
+.gallery .inner{padding:0 var(--gut)}
+
+/* === type ================================================ */
+.tag{color:var(--cyan);opacity:.95;margin:0}
+.h-xl,.h-lg,.h-md{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.022em;line-height:1.08;text-wrap:balance}
+.h-xl{font-size:clamp(2.9rem,13vw,6.4rem)}
+.h-lg{font-size:clamp(2.05rem,8.2vw,3.7rem);line-height:1.12}
+.h-md{font-size:clamp(1.25rem,4.6vw,1.85rem);line-height:1.34;color:var(--petal)}
+.body{margin:0;font-family:var(--serif);font-size:clamp(1.02rem,4vw,1.2rem);line-height:1.68;color:var(--petal);max-width:38ch}
+.lede{margin:0;font-family:var(--serif);font-size:clamp(1.02rem,4.2vw,1.32rem);line-height:1.6;color:var(--petal);max-width:32ch}
+.hint{margin:0;font-size:.86rem;line-height:1.6;color:var(--grey);max-width:34ch}
+.sig{margin:0;font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--cyan)}
+.accent{
+  background:linear-gradient(104deg,var(--petal) 0%,var(--rose) 46%,var(--violet) 104%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* masked line reveal &mdash; the workhorse */
+.ln-wrap,.h-lg,.h-xl{display:block}
+.ln{
+  display:inline-block;
+  transform:translate3d(0,110%,0) rotateX(-38deg);
+  transform-origin:top center;
+  opacity:0;
+  transition:transform 1.15s var(--out),opacity .9s var(--out);
+}
+.h-lg,.h-xl,.ln-wrap{overflow:hidden;padding-bottom:.14em}
+/* each .ln in a heading owns its own line -- inline-block siblings would
+   run together with no space if they ever fit on one line */
+.h-lg .ln{display:block}
+.in .ln{transform:none;opacity:1}
+.h-lg .ln:nth-child(2),.thesis-line .ln-wrap:nth-child(2) .ln{transition-delay:.11s}
+.letter .ln-wrap{margin:0}
+.letter{display:flex;flex-direction:column;gap:clamp(4px,1.4vw,10px)}
+.letter .ln{font-family:var(--serif);font-size:clamp(1.4rem,6vw,2.3rem);line-height:1.24;letter-spacing:-.015em}
+.letter .dim .ln{color:var(--grey)}
+.letter .ln-wrap:nth-child(1) .ln{transition-delay:.02s}
+.letter .ln-wrap:nth-child(2) .ln{transition-delay:.13s}
+.letter .ln-wrap:nth-child(3) .ln{transition-delay:.26s}
+.letter .ln-wrap:nth-child(4) .ln{transition-delay:.37s}
+.letter .ln-wrap:nth-child(5) .ln{transition-delay:.62s}
+
+/* generic fade-rise reveal */
+.reveal{opacity:0;transform:translate3d(0,26px,0);transition:opacity .95s var(--out),transform .95s var(--out)}
+.in .reveal{opacity:1;transform:none}
+.in .reveal:nth-of-type(2){transition-delay:.1s}
+.in .reveal:nth-of-type(3){transition-delay:.2s}
+
+/* === hero ================================================ */
+.hero .inner{gap:clamp(20px,4vw,30px)}
+/* clips its own scaled image, now that .sec no longer clips vertically */
+.hero-photo{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+#heroImg{
+  position:absolute;inset:0;
+  background-image:var(--hero-src);
+  background-size:cover;background-position:64% 32%;
+  opacity:.34;
+  filter:saturate(1.1) contrast(1.04);
+  -webkit-mask-image:radial-gradient(88% 62% at 68% 34%,#000 8%,transparent 74%);
+  mask-image:radial-gradient(88% 62% at 68% 34%,#000 8%,transparent 74%);
+  transform:scale(1.12);
+  animation:heroFloat 24s var(--io) infinite alternate;
+}
+@keyframes heroFloat{from{transform:scale(1.12) translate3d(-1.6%,-1%,0)}to{transform:scale(1.2) translate3d(1.8%,1.4%,0)}}
+
+.title{
+  margin:0;font-family:var(--serif);font-weight:400;
+  font-size:clamp(4.6rem,26vw,13rem);
+  line-height:.86;letter-spacing:-.05em;
+  display:flex;
+}
+.title span{
+  display:inline-block;
+  transform:translate3d(0,.9em,0) rotateX(-52deg);
+  opacity:0;
+  background:linear-gradient(158deg,var(--cream) 4%,var(--petal) 44%,var(--rose) 88%,var(--violet) 122%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  transition:transform 1.35s var(--out),opacity .95s var(--out);
+}
+.title.on span{transform:none;opacity:1}
+.title.on span:nth-child(2){transition-delay:.07s}
+.title.on span:nth-child(3){transition-delay:.14s}
+.title.on span:nth-child(4){transition-delay:.21s}
+.title.on span:nth-child(5){transition-delay:.28s}
+
+.cue{display:flex;align-items:center;gap:11px;color:var(--grey);margin-top:6px;transition:opacity .6s var(--out)}
+.cue i{display:block;width:42px;height:1px;background:linear-gradient(90deg,var(--rose),transparent);position:relative;overflow:hidden}
+.cue i::after{content:"";position:absolute;inset:0;background:var(--cyan);animation:sweep 2.4s var(--io) infinite}
+@keyframes sweep{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+body.scrolled .cue{opacity:0}
+
+/* === thesis ============================================== */
+.thesis .inner{max-width:800px}
+.thesis-photo{position:absolute;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+#thesisImg{
+  position:absolute;inset:0;
+  background-image:var(--thesis-src);
+  background-size:cover;background-position:60% 40%;
+  opacity:0;transform:scale(1.28);
+  filter:saturate(1.15);…736 tokens truncated…ion:relative;width:min(196px,52vw);aspect-ratio:1;
+  display:grid;place-items:center;border:0;background:none;color:inherit;
+  border-radius:50%;cursor:pointer;touch-action:none;
+}
+#holdbtn .halo{
+  position:absolute;inset:-14%;border-radius:50%;
+  background:conic-gradient(from 0deg,transparent,rgba(255,61,128,.5),rgba(123,92,255,.42),transparent 72%);
+  filter:blur(20px);opacity:.32;
+  animation:spin 9s linear infinite;
+  transition:opacity .6s var(--out);
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+#holdbtn.on .halo{opacity:.95}
+#holdbtn svg{grid-area:1/1;width:100%;height:100%;transform:rotate(-90deg);position:relative}
+#holdbtn circle{fill:none;stroke-width:1.5}
+#holdbtn .track{stroke:var(--hair)}
+#holdbtn .fill{
+  stroke:var(--rose);stroke-linecap:round;
+  stroke-dasharray:339.29;stroke-dashoffset:339.29;
+  transition:stroke-dashoffset .16s linear;
+  filter:drop-shadow(0 0 7px rgba(255,61,128,.6));
+}
+#holdword{
+  grid-area:1/1;position:relative;
+  font-family:var(--serif);font-size:clamp(1.05rem,4.4vw,1.3rem);color:var(--petal);
+  transition:color .5s var(--out),transform .5s var(--out);
+}
+#holdbtn.on #holdword{color:var(--cream);transform:scale(1.07)}
+.hold-msg{
+  margin:0;min-height:3.2em;font-family:var(--serif);
+  font-size:1.02rem;line-height:1.55;color:var(--petal);
+}
+.hold-msg.swap{animation:holdSwap .5s var(--out)}
+@keyframes holdSwap{from{opacity:0;transform:translate3d(0,5px,0)}to{opacity:1;transform:none}}
+
+/* === roses =============================================== */
+.rose-stage{display:flex;flex-direction:column;align-items:center;gap:20px}
+#rose{
+  width:min(128px,32vw);aspect-ratio:100/116;border:0;background:none;cursor:pointer;padding:0;
+  filter:drop-shadow(0 12px 30px rgba(255,61,128,.34));
+  transition:transform .5s var(--out);
+}
+#rose svg{width:100%;height:100%;overflow:visible}
+#rose .stem path{fill:#4E6B3E}
+#rose .stalk{fill:none;stroke:#4E6B3E;stroke-width:3;stroke-linecap:round}
+/* petals hinge at the base of the cup, so opening splays them outward */
+#rose .p{transform-origin:50px 70px;transition:transform .75s var(--out)}
+#rose .p1{fill:var(--rose-dim)}
+#rose .p2{fill:var(--rose-dim)}
+#rose .p3{fill:var(--rose)}
+#rose:active{transform:scale(.94)}
+#rose.bloom .p1{transform:rotate(-11deg) scale(1.04)}
+#rose.bloom .p2{transform:rotate(11deg) scale(1.04)}
+#rose.bloom .p3{transform:scale(1.07) translateY(-2px)}
+
+.glass{
+  border:1px solid var(--hair);background:var(--glass);border-radius:18px;
+  backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);
+}
+.rose-panel{
+  width:100%;max-width:430px;padding:20px 22px 24px;
+  display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;
+}
+.rose-panel .mono{color:var(--cyan);opacity:.85;font-variant-numeric:tabular-nums}
+.rose-msg{
+  margin:0;font-family:var(--serif);font-size:clamp(1.06rem,4.4vw,1.28rem);
+  line-height:1.5;color:var(--petal);min-height:3em;
+  display:flex;align-items:center;justify-content:center;
+}
+.rose-msg-in{display:block;text-align:center}
+.rose-msg .w{
+  display:inline-block;opacity:0;transform:translate3d(0,.7em,0);
+  animation:wordUp .7s var(--out) forwards;
+}
+@keyframes wordUp{to{opacity:1;transform:none}}
+
+/* === buttons ============================================= */
+.btn{
+  align-self:flex-start;margin-top:6px;
+  padding:14px 30px;border-radius:999px;
+  font-family:var(--sans);font-size:.92rem;color:var(--petal);
+  border:1px solid var(--hair);background:var(--glass);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  cursor:pointer;position:relative;
+  background-image:linear-gradient(100deg,rgba(255,61,128,.26),rgba(123,92,255,.26));
+  background-size:100% 100%;
+  box-shadow:0 0 0 0 rgba(255,61,128,0);
+  transition:color .4s var(--out),border-color .4s var(--out),transform .4s var(--out),
+             box-shadow .4s var(--out),background-size .5s var(--out);
+}
+/* the gradient lives on the element itself -- an absolutely positioned
+   ::before would paint over the label instead of behind it */
+.btn{background-size:100% 0;background-repeat:no-repeat;background-position:0 100%}
+.btn:hover{color:var(--cream);border-color:rgba(255,61,128,.4);background-size:100% 100%;box-shadow:0 8px 30px -12px rgba(255,61,128,.6)}
+.btn:active{transform:scale(.97)}
+
+button:focus-visible,#rose:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  #heroImg,.halo,.cue i::after,.card.near .sheen{animation:none}
+  .ln,.reveal,.title span,#thesisImg{transition-duration:.2s}
+  .ln{transform:none;opacity:1}
+  .title span{transform:none;opacity:1}
+  .reveal{opacity:1;transform:none}
+}
+
+/* Phone layout: keep every section readable inside a narrow mobile browser
+   without requiring sideways page scrolling or clipped content. */
+@media (max-width:600px){
+  :root{--gut:20px}
+  .sec{min-height:auto;padding-top:84px;padding-bottom:72px}
+  .hero,.thesis{min-height:100dvh}
+  .gallery{min-height:100dvh;padding-top:78px;padding-bottom:54px}
+  .deck{gap:14px;padding:10px 0 18px;scroll-snap-type:x mandatory}
+  .deck-pad{flex-basis:calc((100% - 82vw) / 2)}
+  .card{flex-basis:82vw;gap:12px;padding:10px 10px 16px;transform:none;opacity:1}
+  .shot{aspect-ratio:4/5}
+  .meta{gap:5px}
+  .meta h3{font-size:1.12rem}
+  .meta p{font-size:.84rem;line-height:1.5}
+}
+</style>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var root=document.documentElement;
+
+  /* === inlined assets (no network &mdash; CSP-safe) === */
+  var IMG={
+    roses:"assets/p_roses.jpg",
+    night:"assets/p_night.jpg",
+    laugh:"assets/p_laugh.jpg",
+    home: "assets/p_home.jpg",
+    key:  "assets/p_key.jpg"
+  };
+  document.getElementById("g0").src=IMG.roses;
+  document.getElementById("g1").src=IMG.night;
+  document.getElementById("g2").src=IMG.laugh;
+  document.getElementById("g3").src=IMG.home;
+  document.getElementById("g4").src=IMG.key;
+  document.getElementById("heroImg").style.setProperty("--hero-src","url("+IMG.roses+")");
+  document.getElementById("thesisImg").style.setProperty("--thesis-src","url("+IMG.roses+")");
+
+  /* procedural film grain, drawn once */
+  (function(){
+    var c=document.createElement("canvas");c.width=c.height=180;
+    var x=c.getContext("2d"),d=x.createImageData(180,180),p=d.data;
+    for(var i=0;i<p.length;i+=4){
+      var v=Math.random()*255;
+      p[i]=p[i+1]=p[i+2]=v;p[i+3]=26;
+    }
+    x.putImageData(d,0,0);
+    root.style.setProperty("--grain-src","url("+c.toDataURL()+")");
+  })();
+
+  /* === aurora mesh === */
+  (function(){
+    var cv=document.getElementById("aurora"),ctx=cv.getContext("2d");
+    var W,H,blobs,t=0,SC=.16; // render small, CSS blurs & scales it up
+    var TINTS=[[255,61,128],[123,92,255],[255,120,90],[79,224,220]];
+    function size(){
+      W=Math.max(1,Math.round(cv.clientWidth*SC));
+      H=Math.max(1,Math.round(cv.clientHeight*SC));
+      cv.width=W;cv.height=H;
+    }
+    function make(){
+      blobs=TINTS.map(function(c,i){
+        return {c:c,
+          x:Math.random(),y:Math.random(),
+          r:.38+Math.random()*.3,
+          sx:.00013+Math.random()*.00019,
+          sy:.00011+Math.random()*.00017,
+          px:Math.random()*6.28,py:Math.random()*6.28,
+          /* kept low: these composite additively, so overlaps compound fast
+             and that is what washed the middle of the page out */
+          a:i===3?.17:.30};
+      });
+    }
+    function frame(){
+      t++;
+      ctx.globalCompositeOperation="source-over";
+      ctx.fillStyle="#07050A";ctx.fillRect(0,0,W,H);
+      ctx.globalCompositeOperation="lighter";
+      for(var i=0;i<blobs.length;i++){
+        var b=blobs[i];
+        var cx=(.5+Math.sin(t*b.sx*60+b.px)*.42)*W;
+        var cy=(.5+Math.cos(t*b.sy*60+b.py)*.44)*H;
+        var rr=b.r*Math.max(W,H);
+        var g=ctx.createRadialGradient(cx,cy,0,cx,cy,rr);
+        g.addColorStop(0,"rgba("+b.c[0]+","+b.c[1]+","+b.c[2]+","+b.a+")");
+        g.addColorStop(1,"rgba("+b.c[0]+","+b.c[1]+","+b.c[2]+",0)");
+        ctx.fillStyle=g;
+        ctx.beginPath();ctx.arc(cx,cy,rr,0,6.2832);ctx.fill();
+      }
+      if(!reduce) requestAnimationFrame(frame);
+    }
+    size();make();frame();
+    window.addEventListener("resize",function(){ size(); if(reduce) frame(); });
+  })();
+
+  /* === preloader === */
+  (function(){
+    var boot=document.getElementById("boot");
+    var bar=boot.querySelector(".boot-bar i");
+    var num=boot.querySelector(".boot-num");
+    var n=0;
+    document.body.classList.add("locked");
+    function finish(){
+      boot.classList.add("done");
+      document.body.classList.remove("locked");
+      setTimeout(function(){ boot.classList.add("gone"); },1100);
+      document.getElementById("title").classList.add("on");
+      var hero=document.querySelector(".hero");
+      if(hero) hero.classList.add("in");
+    }
+    if(reduce){ finish(); return; }
+    var iv=setInterval(function(){
+      n=Math.min(100,n+Math.round(4+Math.random()*11));
+      bar.style.width=n+"%";
+      num.textContent=String(n).padStart(3,"0");
+      if(n>=100){ clearInterval(iv); setTimeout(finish,260); }
+    },58);
+  })();
+
+  /* === mono label scramble === */
+  var GLYPHS="abcdefghijklmnopqrstuvwxyz0123456789/*+-<>_";
+  function scramble(el){
+    if(reduce) return;
+    var final=el.textContent,len=final.length,step=0;
+    var iv=setInterval(function(){
+      step++;
+      var s="";
+      for(var i=0;i<len;i++){
+        if(final[i]===" "){ s+=" "; continue; }
+        s+= i<step*1.3 ? final[i] : GLYPHS[Math.floor(Math.random()*GLYPHS.length)];
+      }
+      el.textContent=s;
+      if(step*1.3>=len){ clearInterval(iv); el.textContent=final; }
+    },34);
+  }
+
+  /* === section reveals + rail === */
+  var secs=[].slice.call(document.querySelectorAll(".sec"));
+  var rail=document.getElementById("rail");
+  var railFill=document.getElementById("railfill");
+  var ticks=secs.map(function(s,i){
+    var d=document.createElement("span");
+    d.className="tick";
+    rail.appendChild(d);
+    return d;
+  });
+
+  function enter(sec){
+    if(sec.classList.contains("in")) return;
+    sec.classList.add("in");
+    var tag=sec.querySelector(".tag");
+    if(tag&&!tag.dataset.done){ tag.dataset.done="1"; scramble(tag); }
+  }
+
+  /* IntersectionObserver is the nice path, never the only path. If it is
+     unsupported or never fires, every .reveal would sit at opacity 0 and she
+     would open a blank page. The geometry pass in onScroll is the guarantee. */
+  try{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) enter(e.target); });
+    },{threshold:.22});
+    secs.forEach(function(s){ io.observe(s); });
+  }catch(err){}
+
+  /* === scroll state === */
+  /* Synchronous on purpose rather than rAF-throttled: eight sections is a
+     trivial amount of work, and it keeps reveals correct even where frames
+     are throttled (background tab, reduced-power mode). */
+  function onScroll(){
+    var y=window.scrollY||window.pageYOffset||0;
+    var vh=window.innerHeight;
+    document.body.classList.toggle("scrolled",y>60);
+    var max=document.body.scrollHeight-vh;
+    railFill.style.transform="scaleY("+(max>0?Math.min(1,y/max):0)+")";
+    var mid=y+vh/2;
+    for(var i=0;i<secs.length;i++){
+      var s=secs[i],box=s.getBoundingClientRect();
+      if(box.top<vh*.85&&box.bottom>0) enter(s);
+      ticks[i].classList.toggle("on",mid>=s.offsetTop&&mid<s.offsetTop+s.offsetHeight);
+    }
+  }
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("resize",onScroll);
+  window.addEventListener("load",onScroll);
+  onScroll();
+
+  /* === gallery deck depth === */
+  (function(){
+    var deck=document.getElementById("deck");
+    var cards=[].slice.call(deck.querySelectorAll(".card"));
+    function paint(){
+      var r=deck.getBoundingClientRect();
+      var mid=r.left+r.width/2;
+      cards.forEach(function(c){
+        var cr=c.getBoundingClientRect();
+        var d=(cr.left+cr.width/2-mid)/r.width;      // -1 .. 1
+        var ad=Math.min(Math.abs(d),1);
+        c.style.setProperty("--s",(1-ad*.14).toFixed(3));
+        c.style.setProperty("--r",(-d*16).toFixed(2)+"deg");
+        c.style.setProperty("--o",(1-ad*.5).toFixed(3));
+        c.classList.toggle("near",ad<.22);
+      });
+    }
+    deck.addEventListener("scroll",paint,{passive:true});
+    window.addEventListener("resize",paint);
+    window.addEventListener("load",paint);
+    setTimeout(paint,120);
+    /* No wheel remapping here on purpose. Turning vertical wheel into
+       horizontal deck scroll trapped the page: you could not scroll past the
+       gallery until the deck hit its end. The deck is swipeable on touch and
+       drag/shift-scrollable on desktop, which is enough. */
+  })();
+
+  /* === press & hold === */
+  (function(){
+    var btn=document.getElementById("holdbtn");
+    var word=document.getElementById("holdword");
+    var msg=document.getElementById("holdmsg");
+    var fill=btn.querySelector(".fill");
+    var CIRC=339.29,DUR=9000;
+    var STEPS=[
+      {at:.00,t:"i've got you."},
+      {at:.28,t:"you don't have to explain it."},
+      {at:.55,t:"you don't have to be smaller about it."},
+      {at:.80,t:"i'm still here."}
+    ];
+    var raf=null,start=0,on=false,last=-1;
+
+    function say(text){
+      if(msg.textContent===text) return;
+      msg.textContent=text;
+      msg.classList.remove("swap");
+      void msg.offsetWidth;
+      msg.classList.add("swap");
+    }
+
+    function tick(now){
+      var p=Math.min((now-start)/DUR,1);
+      fill.style.strokeDashoffset=CIRC*(1-p);
+      /* Resolve the highest step reached FIRST, then compare once. Scanning
+         and assigning inside one loop meant that whenever the top step was
+         already showing, the scan fell through to step 0 (p>=0 is always
+         true) and rewrote it -- flipping between two lines every frame. */
+      var idx=-1;
+      for(var i=0;i<STEPS.length;i++){ if(p>=STEPS[i].at) idx=i; }
+      if(idx>-1&&idx!==last){ last=idx; say(STEPS[idx].t); }
+      if(p>=1){ word.textContent="held"; say("as many times as you need."); on=false; return; }
+      raf=requestAnimationFrame(tick);
+    }
+    btn.addEventListener("pointerdown",function(e){
+      e.preventDefault();
+      if(on) return;
+      if(e.pointerId!=null&&btn.setPointerCapture){ try{ btn.setPointerCapture(e.pointerId); }catch(err){} }
+      on=true;last=-1;
+      btn.classList.add("on");
+      word.textContent="holding";
+      start=performance.now();
+      raf=requestAnimationFrame(tick);
+      chime(392);
+    });
+    ["pointerup","pointercancel"].forEach(function(ev){
+      btn.addEventListener(ev,function(){
+        if(!on){ btn.classList.remove("on"); return; }
+        on=false;cancelAnimationFrame(raf);
+        btn.classList.remove("on");
+        word.textContent="hold";
+        fill.style.strokeDashoffset=CIRC;
+        last=-1;
+        say("that's okay. it's here whenever.");
+      });
+    });
+    btn.addEventListener("contextmenu",function(e){ e.preventDefault(); });
+  })();
+
+  /* === roses === */
+  (function(){
+    var MSGS=[
+      "you are allowed to not be okay today.",
+      "nothing about this is your fault.",
+      "you don't have to earn a rest.",
+      "i'd choose you again on your worst day.",
+      "the way you notice small things is my favourite thing about you.",
+      "you are not too much. you never were.",
+      "drink some water. i mean it.",
+      "you're allowed to take up space.",
+      "this is heavy because it's heavy \u2014 not because you're weak.",
+      "i think about your laugh a lot.",
+      "you don't have to hold it together for me.",
+      "you've survived every worst day so far. all of them.",
+      "i'm proud of you for something you probably haven't told anyone.",
+      "you don't have to reply to anyone right now.",
+      "your soft heart is not a flaw in you.",
+      "if today is only getting through it, that counts.",
+      "i love you when you're quiet too.",
+      "nothing you could tell me would make me leave.",
+      "you make ordinary days somewhere i want to be.",
+      "your feelings aren't an inconvenience to me.",
+      "please eat something. even a little.",
+      "you are still the same person underneath all of this.",
+      "you don't have to be brave right now.",
+      "i'd rather have your hard days than anyone else's easy ones.",
+      "you're doing better than you think you are.",
+      "come back and take another. i'll keep them coming."
+
+    ];
+    var btn=document.getElementById("rose");
+    var out=document.getElementById("rosemsg");
+    var count=document.getElementById("rosecount");
+    var bag=[],taken=0;
+    function draw(){
+      if(!bag.length){
+        bag=MSGS.slice();
+        for(var i=bag.length-1;i>0;i--){
+          var j=Math.floor(Math.random()*(i+1)),t=bag[i];bag[i]=bag[j];bag[j]=t;
+        }
+      }
+      return bag.pop();
+    }
+    btn.addEventListener("click",function(){
+      btn.classList.add("bloom");
+      setTimeout(function(){ btn.classList.remove("bloom"); },760);
+      var words=draw().split(" ");
+      out.innerHTML="";
+      words.forEach(function(w,i){
+        var s=document.createElement("span");
+        s.className="w";
+        s.textContent=w;
+        s.style.animationDelay=(i*0.045)+"s";
+        out.appendChild(s);
+        out.appendChild(document.createTextNode(" "));
+      });
+      taken++;
+      count.textContent=String(Math.min(taken,99)).padStart(2,"0")+" / "+MSGS.length;
+      chime();
+    });
+  })();
+
+  /* === back to top === */
+  document.getElementById("totop").addEventListener("click",function(){
+    window.scrollTo({top:0,behavior:reduce?"auto":"smooth"});
+  });
+
+  /* === ambient sound &mdash; soft pad + sparse pentatonic bells === */
+  var actx=null,master=null,bellTimer=null,soundOn=false;
+  var NOTES=[261.63,293.66,349.23,392.00,440.00,523.25,587.33,698.46];
+
+  function build(){
+    if(actx) return;
+    var AC=window.AudioContext||window.webkitAudioContext;
+    if(!AC) return;
+    actx=new AC();
+    master=actx.createGain();master.gain.value=0;master.connect(actx.destination);
+    var pad=actx.createGain();pad.gain.value=.05;
+    var lp=actx.createBiquadFilter();lp.type="lowpass";lp.frequency.value=300;lp.Q.value=.6;
+    [130.81,131.55,196.00].forEach(function(f){
+      var o=actx.createOscillator();o.type="sawtooth";o.frequency.value=f;
+      var g=actx.createGain();g.gain.value=f>150?.28:1;
+      o.connect(g);g.connect(lp);o.start();
+    });
+    var lfo=actx.createOscillator();lfo.frequency.value=.055;
+    var lg=actx.createGain();lg.gain.value=.021;
+    lfo.connect(lg);lg.connect(pad.gain);lfo.start();
+    lp.connect(pad);pad.connect(master);
+  }
+  function bell(freq,vol){
+    if(!actx||!soundOn) return;
+    var t=actx.currentTime;
+    var o=actx.createOscillator();o.type="sine";o.frequency.value=freq;
+    var g=actx.createGain();
+    g.gain.setValueAtTime(0,t);
+    g.gain.linearRampToValueAtTime(vol,t+.05);
+    g.gain.exponentialRampToValueAtTime(.0001,t+3.6);
+    o.connect(g);g.connect(master);o.start(t);o.stop(t+3.8);
+  }
+  function chime(f){ bell(f||NOTES[Math.floor(Math.random()*NOTES.length)],.085); }
+  function loop(){
+    bellTimer=setTimeout(function(){
+      bell(NOTES[Math.floor(Math.random()*NOTES.length)],.065);
+      loop();
+    },2800+Math.random()*5200);
+  }
+  var sBtn=document.getElementById("sound");
+  sBtn.addEventListener("click",function(){
+    build();
+    if(!actx) return;
+    if(actx.state==="suspended") actx.resume();
+    soundOn=!soundOn;
+    sBtn.setAttribute("aria-pressed",String(soundOn));
+    sBtn.setAttribute("aria-label",soundOn?"Turn off ambient sound":"Turn on ambient sound");
+    var t=actx.currentTime;
+    master.gain.cancelScheduledValues(t);
+    master.gain.setValueAtTime(master.gain.value,t);
+    master.gain.linearRampToValueAtTime(soundOn?.72:0,t+1.5);
+    if(soundOn) loop(); else { clearTimeout(bellTimer);bellTimer=null; }
+  });
+})();
+</script>
+
